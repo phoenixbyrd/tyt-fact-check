@@ -84,6 +84,7 @@ def load_editions():
         data["_date"] = data.get("date", name)
         mp3 = os.path.join(EDITIONS, name, "episode.mp3")
         data["_has_audio"] = os.path.isfile(mp3)
+        data["_has_rebuttal"] = os.path.isfile(os.path.join(EDITIONS, name, "rebuttal.mp3"))
         editions.append(data)
     return editions
 
@@ -180,6 +181,13 @@ def edition_body(ed, standalone):
             '<audio controls preload="none" src="audio/%s.mp3"></audio>'
             '<p class="pod-note">Alex and Jordan walk through every video&#x2019;s '
             "score and its key misleading segments.</p></div>" % esc(date)
+        )
+    if ed.get("_has_rebuttal"):
+        audio += (
+            '<div class="podcast"><div class="pod-h">Rebuttal episode</div>'
+            '<audio controls preload="none" src="audio/%s-rebuttal.mp3"></audio>'
+            '<p class="pod-note">Alex and Jordan rebut every misleading, false, or '
+            "opinion-driven segment with the corrected record.</p></div>" % esc(date)
         )
     cards = "".join(video_card(v) for v in ed.get("videos", []))
     if not cards:
@@ -297,6 +305,9 @@ def build():
         src = os.path.join(EDITIONS, ed["_date"], "episode.mp3")
         if os.path.isfile(src):
             shutil.copy(src, os.path.join(audio_dir, ed["_date"] + ".mp3"))
+        reb = os.path.join(EDITIONS, ed["_date"], "rebuttal.mp3")
+        if os.path.isfile(reb):
+            shutil.copy(reb, os.path.join(audio_dir, ed["_date"] + "-rebuttal.mp3"))
 
     edition_links = "".join(
         '<a href="%s.html">%s</a>' % (esc(ed["_date"]), esc(fmt_date(ed["_date"])))
