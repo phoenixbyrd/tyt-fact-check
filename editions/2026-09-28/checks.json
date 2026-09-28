@@ -1,0 +1,184 @@
+{
+ "date": "2026-09-28",
+ "podcast": {
+  "duration_sec": 343,
+  "file": "episode.mp3"
+ },
+ "videos": [
+  {
+   "published": "September 27, 2026",
+   "segments": [
+    {
+     "explanation": "Wire reporting dates the tanker strike to September 5, 2026 — three weeks before the video — not September 26–27. The event happened; presenting it as this weekend's news is materially misleading.",
+     "issue": "Stale news presented as breaking",
+     "segment": "The video presents the US sinking of three Iranian tankers as having happened “over the weekend.” (Paraphrased from auto-generated captions.)",
+     "severity": "Moderate",
+     "sources": []
+    },
+    {
+     "explanation": "The underlying September 8–9 attack on the Jordan base was wire-reported at the time. The video revives it as a September 28 development, which it is not.",
+     "issue": "Stale news presented as breaking",
+     "segment": "The video presents a fresh Iranian missile barrage against a base in Jordan as breaking news. (Paraphrased from auto-generated captions.)",
+     "severity": "Moderate",
+     "sources": []
+    },
+    {
+     "explanation": "No independent reporting was found confirming cluster munitions in that strike. Unverified stays unverifiable — noted here so it is not repeated as fact.",
+     "issue": "Unverified detail",
+     "segment": "The video cites Iranian cluster-munition use in the Jordan-base strike. (Paraphrased from auto-generated captions.)",
+     "severity": "Minor",
+     "sources": []
+    }
+   ],
+   "summary": "The big picture checks out — the US–Iran war is real and ongoing, Hormuz restrictions are in place, and Ghalibaf really did threaten Gulf oil and gas infrastructure. The problem is timing: two events presented as breaking this weekend actually happened weeks ago.",
+   "title": "Iran Threatens the One Move Trump CAN’T Survive",
+   "truth_label": "Mixed",
+   "truth_score": 65,
+   "url": "https://www.youtube.com/watch?v=R1oMiyxloO4",
+   "video_id": "R1oMiyxloO4"
+  },
+  {
+   "published": "September 27, 2026",
+   "segments": [
+    {
+     "explanation": "Shipping disruption and attacks on Saudi oil infrastructure are real and wire-reported, but the shutdown is not total — not all shipping is equally affected. The video's framing overstates how complete the disruption is.",
+     "issue": "Overstatement",
+     "segment": "The video describes Red Sea shipping as broadly shut down. (Paraphrased from auto-generated captions.)",
+     "severity": "Minor",
+     "sources": []
+    },
+    {
+     "explanation": "No one can verify a prediction about how long the war lasts. As analysis it would be fine; as a near-certain outcome it overreaches. In the video's favor: Gabbard's congressional testimony that US intelligence assessed Iran was not building a nuclear weapon is on the record — though that assessment must be read with its proper scope and date.",
+     "issue": "Speculation presented as near-certain",
+     "segment": "The video predicts the war will continue throughout Trump's term. (Paraphrased from auto-generated captions.)",
+     "severity": "Minor",
+     "sources": []
+    }
+   ],
+   "summary": "Largely solid. Red Sea shipping disruption and Saudi oil infrastructure attacks are wire-supported, Houthi forces really did capture equipment including a tank after Saudi-backed forces withdrew, and Gabbard's testimony is on the record. Two small deductions for overstatement and speculation.",
+   "title": "U.S. Weapons FALL Into Houthi Hands After Major Defeat",
+   "truth_label": "Honest",
+   "truth_score": 90,
+   "url": "https://www.youtube.com/watch?v=qnXhas9j4oU",
+   "video_id": "qnXhas9j4oU"
+  },
+  {
+   "published": "September 27, 2026",
+   "segments": [
+    {
+     "explanation": "There is no evidence of any such IRS notation — the IRS does not publicly flag individual donations on specific returns. This appears to be the guest's embellishment, not a fact.",
+     "issue": "False",
+     "segment": "The guest claims the IRS “flagged” a $5M 2022 donation to Landmark Legal Foundation as strange dark money. (Paraphrased from auto-generated captions.)",
+     "severity": "Severe",
+     "sources": [
+      {
+       "name": "ProPublica Nonprofit Explorer — Landmark Legal Foundation 990s",
+       "url": "https://projects.propublica.org/nonprofits/organizations/510203802"
+      }
+     ]
+    },
+    {
+     "explanation": "The $2.61M figure is Landmark's total functional expenses for FY2024, not payroll. Actual payroll (officer compensation plus salaries plus payroll taxes) was roughly $913K in FY2022 and about $1.17M in FY2023. Total expenses were relabeled as payroll.",
+     "issue": "Misleading",
+     "segment": "The guest says Landmark spends $2.6M a year on payroll for 20 employees. (Paraphrased from auto-generated captions.)",
+     "severity": "Moderate",
+     "sources": [
+      {
+       "name": "ProPublica Nonprofit Explorer — Landmark Legal Foundation 990s",
+       "url": "https://projects.propublica.org/nonprofits/organizations/510203802"
+      }
+     ]
+    },
+    {
+     "explanation": "The Bradley Impact Fund gave about $27.4M across 2021–2022 — not a single $27.1M gift in one year. The dollar magnitude is real; the “one donation” framing is wrong.",
+     "issue": "Misleading",
+     "segment": "The guest says America First Legal received a single $27.1M anonymous donation in one year from the Bradley Fund. (Paraphrased from auto-generated captions.)",
+     "severity": "Moderate",
+     "sources": []
+    },
+    {
+     "explanation": "FY2022 was genuinely a spike year — contributions jumped to $7.79M from $1.66M in 2021 — but Schedule B donor identities are redacted, so a single $5M gift versus several large ones cannot be confirmed.",
+     "issue": "Unverified",
+     "segment": "The guest describes a “like $5M” single donation to Landmark in 2022. (Paraphrased from auto-generated captions.)",
+     "severity": "Minor",
+     "sources": [
+      {
+       "name": "ProPublica Nonprofit Explorer — Landmark Legal Foundation 990s",
+       "url": "https://projects.propublica.org/nonprofits/organizations/510203802"
+      }
+     ]
+    }
+   ],
+   "summary": "A mix of genuine financial findings and serious distortions. The 990s really do show Landmark Legal Foundation's assets more than tripling to about $17.4M, zero dollars in grants, and the officer pay figures check out. But two claims are flat wrong and one is framed to mislead — enough to sink the video.",
+   "title": "Mark Levin CAUGHT In Shady Dark Money Scheme",
+   "truth_label": "Misleading",
+   "truth_score": 35,
+   "url": "https://www.youtube.com/watch?v=t2wblC-UzSE",
+   "video_id": "t2wblC-UzSE"
+  },
+  {
+   "published": "September 27, 2026",
+   "segments": [
+    {
+     "explanation": "The preceding Reuters result was 82% Republican approval. Describing that as “like 98%” inflates the baseline to make the drop look steeper.",
+     "issue": "Inflated",
+     "segment": "The video says Trump's prior Republican support was “almost 100%, like 98%.” (Paraphrased from auto-generated captions.)",
+     "severity": "Moderate",
+     "sources": []
+    },
+    {
+     "explanation": "Those exact combined figures could not be confirmed in the primary poll materials that were opened. The underlying polling trend is real; the precise numbers as stated are not verified.",
+     "issue": "Unverified",
+     "segment": "The video cites exact Fox News poll figures — 90% on gas/groceries, 80% on healthcare, 77% on housing. (Paraphrased from auto-generated captions.)",
+     "severity": "Minor",
+     "sources": []
+    },
+    {
+     "explanation": "The calls are real, but the video omits that Rep. Curtis's letter also targeted Hunter Biden, and omits Trump's reimbursement claim — decisive context for judging the story.",
+     "issue": "Selective omission",
+     "segment": "The video reports calls to investigate Donald Trump Jr.'s wedding funding. (Paraphrased from auto-generated captions.)",
+     "severity": "Minor",
+     "sources": []
+    },
+    {
+     "explanation": "Tucker Carlson really made the claim, but the underlying private conversation and the alleged Trump quote are uncorroborated. A claim about a private talk with no record cannot be verified.",
+     "issue": "Unverifiable",
+     "segment": "The video relays Tucker Carlson's claim about a private conversation with Trump. (Paraphrased from auto-generated captions.)",
+     "severity": "Minor",
+     "sources": []
+    },
+    {
+     "explanation": "The war itself is wire-confirmed. But attributing its motive to Israel's behest is an assertion about intent with no supporting evidence — motive cannot be inferred.",
+     "issue": "Unverified motive",
+     "segment": "The video frames the Iran war as fought “at Israel's behest.” (Paraphrased from auto-generated captions.)",
+     "severity": "Minor",
+     "sources": []
+    }
+   ],
+   "summary": "The polling numbers at the video's core are real — 32% approval, 73% Republican approval, Democrats up eight on the generic ballot per Reuters/Ipsos. But the video inflates, omits, and speculates around them.",
+   "title": "Republicans Quietly Ditch Trump As Midterms Near",
+   "truth_label": "Mixed",
+   "truth_score": 65,
+   "url": "https://www.youtube.com/watch?v=RrbE7FIdhZo",
+   "video_id": "RrbE7FIdhZo"
+  },
+  {
+   "published": "September 27, 2026",
+   "segments": [
+    {
+     "explanation": "Shapiro's hostility to Ron Paul in 2012 is documented — he called Paul “anti-semitic” and “manifestly insane.” But the specific tweets as described could not be found in any archive, and “alt-right” as a label is anachronistic for that era, suggesting statements from different years were conflated.",
+     "issue": "Unverified",
+     "segment": "The video describes Shapiro's old tweets about Ron Paul — claiming he fantasized about strangling Jews, calling him alt-right and a Nazi. (Paraphrased from auto-generated captions.)",
+     "severity": "Minor",
+     "sources": []
+    }
+   ],
+   "summary": "The checkable claims hold up. Shapiro's CBN remarks about Tucker Carlson — that he “traffics in antisemitism as a matter of course, literally every day” — are verified nearly word-for-word from CBN's own upload. The one deduction is for specific old tweets about Ron Paul that could not be located.",
+   "title": "Dave Smith Puts Ben Shapiro ON BLAST",
+   "truth_label": "Honest",
+   "truth_score": 95,
+   "url": "https://www.youtube.com/watch?v=7ewsPiVZOqE",
+   "video_id": "7ewsPiVZOqE"
+  }
+ ]
+}

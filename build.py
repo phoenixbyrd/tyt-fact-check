@@ -118,8 +118,9 @@ def segment_html(seg):
     src_block = ('<div class="sources">Sources: %s</div>' % sources) if sources else ""
     sev = seg.get("severity", "Moderate")
     sev_cls = SEV_CLASS.get(sev, "s-moderate")
+    seg_open = '<div class="segment seg-false">' if sev == "Severe" else '<div class="segment">'
     return (
-        '<div class="segment">'
+        seg_open +
         '<div class="seg-head"><span class="sev %s">%s</span>'
         '<span class="seg-issue">%s</span></div>'
         '<blockquote class="seg-quote">%s</blockquote>'
@@ -271,7 +272,7 @@ Each segment deducts by severity: Minor &minus;5, Moderate &minus;15, Severe
 (primary documents, official data, wire reporting) you can open yourself.</li>
 <li><strong>Verify the event, not the echo.</strong> A claim is treated as true only
 when the underlying event is confirmed by direct evidence — not merely because
-someone said it happened. If the event can't be verified, we say so.</li>
+someone said it happened. If the event can't be verified, we say so — but only\nafter a genuine dig: primary sources first (transcripts, filings, dockets,\ndatasets, official statements), at least three independent outlets or wires\nrather than echoes of one report, official channels (press briefings, agency\nreleases, court dockets, the congressional record, FEC and nonprofit filings),\nand international or primary-language sources for foreign events. Fact-checkers\nare leads, never evidence. If a claim is hours old, it is flagged as developing\nand re-checked before the edition finalizes. Some claims are structurally\nunverifiable — predictions, private conversations with no record — and after\nthe dig we mark them honestly rather than guessing. This full search is standard\nfor every video, and any claim headed for an unverified finding gets a mandatory\nsecond sweep with different search angles before the edition finalizes.</li>
 <li><strong>Corrections:</strong> if new evidence changes a score, the edition is
 updated and the change is noted. No stealth edits.</li>
 <li><strong>One edition per day,</strong> plus a daily podcast episode walking through

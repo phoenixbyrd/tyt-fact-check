@@ -129,6 +129,9 @@ h2{margin-top:2.2em}
 .s-minor{background:rgba(251,191,36,.12);color:var(--mixed);border:1px solid var(--mixed)}
 .s-moderate{background:rgba(251,146,60,.14);color:var(--mislead);border:1px solid var(--mislead)}
 .s-severe{background:rgba(248,113,113,.14);color:var(--false);border:1px solid var(--false)}
+.segment.seg-false{border:1px solid var(--false);border-radius:10px;padding:12px 14px;
+  background:rgba(248,113,113,.06)}
+.segment.seg-false .seg-quote{border-left-color:var(--false);background:rgba(248,113,113,.06)}
 .seg-issue{font-weight:700;font-size:.95rem}
 .seg-quote{margin:.4em 0;padding:10px 14px;border-left:3px solid var(--mislead);
   background:rgba(251,146,60,.06);border-radius:0 8px 8px 0;color:#dfe3ec;font-style:italic}
