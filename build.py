@@ -18,7 +18,7 @@ checks.json schema:
     {
       "title": "...", "url": "https://www.youtube.com/watch?v=...",
       "video_id": "...", "published": "2026-09-28T18:04:00-04:00",
-      "truth_score": 64, "truth_label": "Mixed",
+      "truth_score": 64, "truth_label": "Mixed",   // null score + "Unverifiable" label when no transcript exists
       "summary": "...",
       "segments": [
         {"segment": "quote or description (+ approx timestamp)",
@@ -89,7 +89,13 @@ def load_editions():
 
 
 def slider_html(score, label):
-    score = max(0, min(100, int(score or 0)))
+    if score is None:
+        return (
+            '<div class="truth"><div class="truth-score">'
+            '<span class="verdict v-unverifiable">Unverifiable</span></div>'
+            '<p class="empty">No transcript available — honesty could not be assessed.</p></div>'
+        )
+    score = max(0, min(100, int(score)))
     cls = SCORE_CLASS.get(label, "v-mixed")
     return (
         '<div class="truth">'
@@ -150,8 +156,12 @@ def tally(ed):
     vids = ed.get("videos", [])
     if not vids:
         return "No videos checked"
-    avg = sum(int(v.get("truth_score", 0)) for v in vids) / len(vids)
-    worst = min(vids, key=lambda v: int(v.get("truth_score", 0)))
+    scored = [int(v["truth_score"]) for v in vids if v.get("truth_score") is not None]
+    if not scored:
+        return "%d videos checked &middot; no videos verifiable" % len(vids)
+    avg = sum(scored) / len(scored)
+    worst = min((v for v in vids if v.get("truth_score") is not None),
+                key=lambda v: int(v["truth_score"]))
     return (
         "%d videos checked &middot; average truthfulness <strong>%d/100</strong> "
         "&middot; lowest: %s (%d)"
@@ -219,16 +229,25 @@ BASE = """<!DOCTYPE html>
 """
 
 
+def _avg(ed):
+    scored = [int(v["truth_score"]) for v in ed.get("videos", [])
+              if v.get("truth_score") is not None]
+    return round(sum(scored) / len(scored)) if scored else None
+
+
 def archive_html(editions):
     if not editions:
         return '<p class="empty">Past editions will appear here.</p>'
-    items = "".join(
-        '<a class="arch-item" href="%s.html"><span>%s</span><span class="arch-n">avg %d/100 &middot; %d videos</span></a>'
-        % (esc(ed["_date"]), esc(fmt_date(ed["_date"])),
-           round(sum(int(v.get("truth_score", 0)) for v in ed.get("videos", [])) / max(1, len(ed.get("videos", [])))),
-           len(ed.get("videos", [])))
-        for ed in editions
-    )
+    items = ""
+    for ed in editions:
+        avg = _avg(ed)
+        avg_txt = "avg %d/100 &middot; " % avg if avg is not None else ""
+        items += (
+            '<a class="arch-item" href="%s.html"><span>%s</span>'
+            '<span class="arch-n">%s%d videos</span></a>'
+            % (esc(ed["_date"]), esc(fmt_date(ed["_date"])),
+               avg_txt, len(ed.get("videos", [])))
+        )
     return '<div class="archive">%s</div>' % items
 
 
