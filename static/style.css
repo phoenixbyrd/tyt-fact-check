@@ -105,3 +105,31 @@ h2{margin-top:2.2em}
   h1{font-size:1.4rem}
   .card{padding:16px}
 }
+
+/* ---- truthfulness slider ---- */
+.truth{margin:14px 0 6px}
+.truth-score{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.score-num{font-size:2rem;font-weight:800;letter-spacing:-1px}
+.slider{margin:4px 0 16px}
+.s-track{position:relative;height:10px;border-radius:999px;
+  background:linear-gradient(90deg,#f87171 0%,#fb923c 28%,#fbbf24 48%,#a3e635 72%,#3ddc84 100%)}
+.s-marker{position:absolute;top:50%;width:20px;height:20px;border-radius:50%;
+  background:#0d0f14;border:3px solid #fff;transform:translate(-50%,-50%);
+  box-shadow:0 1px 6px rgba(0,0,0,.6)}
+.s-ends{display:flex;justify-content:space-between;color:var(--muted);
+  font-size:.78rem;margin-top:6px;text-transform:uppercase;letter-spacing:1px}
+
+/* ---- non-truthful segments ---- */
+.seg-h{font-size:1rem;margin:1.4em 0 .4em;color:var(--text)}
+.segments{display:flex;flex-direction:column;gap:14px}
+.segment{border-top:1px solid var(--line);padding-top:12px}
+.seg-head{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.sev{font-size:.75rem;font-weight:700;letter-spacing:.5px;padding:3px 10px;
+  border-radius:999px;text-transform:uppercase}
+.s-minor{background:rgba(251,191,36,.12);color:var(--mixed);border:1px solid var(--mixed)}
+.s-moderate{background:rgba(251,146,60,.14);color:var(--mislead);border:1px solid var(--mislead)}
+.s-severe{background:rgba(248,113,113,.14);color:var(--false);border:1px solid var(--false)}
+.seg-issue{font-weight:700;font-size:.95rem}
+.seg-quote{margin:.4em 0;padding:10px 14px;border-left:3px solid var(--mislead);
+  background:rgba(251,146,60,.06);border-radius:0 8px 8px 0;color:#dfe3ec;font-style:italic}
+.seg-why{margin:.5em 0;color:#c9cfda}

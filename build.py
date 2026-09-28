@@ -5,6 +5,12 @@ Reads editions/<YYYY-MM-DD>/checks.json (+ optional episode.mp3) and
 generates docs/index.html (latest edition + archive + about) and
 docs/<YYYY-MM-DD>.html per edition.
 
+The unit of analysis is the NON-TRUTHFUL SEGMENT: a moment in a video that
+misleads — selective omission, false implication, cherry-picked data,
+strawman, deceptive framing, loaded language implying something false, or an
+outright false claim. Each segment is called out and its dishonesty explained.
+Each video gets a sliding 0-100 truthfulness score.
+
 checks.json schema:
 {
   "date": "2026-09-29",
@@ -12,9 +18,12 @@ checks.json schema:
     {
       "title": "...", "url": "https://www.youtube.com/watch?v=...",
       "video_id": "...", "published": "2026-09-28T18:04:00-04:00",
-      "verdict": "Mixed", "summary": "...",
-      "claims": [
-        {"claim": "...", "verdict": "False", "explanation": "...",
+      "truth_score": 64, "truth_label": "Mixed",
+      "summary": "...",
+      "segments": [
+        {"segment": "quote or description (+ approx timestamp)",
+         "issue": "Omission", "severity": "Moderate",
+         "explanation": "what is misleading + the fuller accurate picture",
          "sources": [{"name": "AP", "url": "https://..."}]}
       ]
     }
@@ -22,8 +31,9 @@ checks.json schema:
   "podcast": {"file": "episode.mp3", "duration_sec": 1234}
 }
 
-Verdicts: Accurate, Mostly accurate, Mixed, Misleading, False,
-          Unverifiable, No checkable claims
+Severity: Minor (-5), Moderate (-15), Severe (-30).
+Score bands: 90-100 Honest, 70-89 Mostly honest, 50-69 Mixed,
+             30-49 Misleading, 0-29 Deceptive.
 """
 
 import html
@@ -37,17 +47,16 @@ EDITIONS = os.path.join(ROOT, "editions")
 DOCS = os.path.join(ROOT, "docs")
 STATIC = os.path.join(ROOT, "static")
 
-CSS_V = 1
+CSS_V = 2
 JS_V = 1
 
-VERDICT_CLASS = {
-    "Accurate": "v-accurate",
-    "Mostly accurate": "v-mostly",
+SEV_CLASS = {"Minor": "s-minor", "Moderate": "s-moderate", "Severe": "s-severe"}
+SCORE_CLASS = {
+    "Honest": "v-accurate",
+    "Mostly honest": "v-mostly",
     "Mixed": "v-mixed",
     "Misleading": "v-misleading",
-    "False": "v-false",
-    "Unverifiable": "v-unverifiable",
-    "No checkable claims": "v-unverifiable",
+    "Deceptive": "v-false",
 }
 
 
@@ -79,56 +88,76 @@ def load_editions():
     return editions
 
 
-def verdict_badge(verdict):
-    cls = VERDICT_CLASS.get(verdict, "v-unverifiable")
-    return '<span class="verdict %s">%s</span>' % (cls, esc(verdict))
+def slider_html(score, label):
+    score = max(0, min(100, int(score or 0)))
+    cls = SCORE_CLASS.get(label, "v-mixed")
+    return (
+        '<div class="truth">'
+        '<div class="truth-score"><span class="score-num">%d</span>'
+        '<span class="verdict %s">%s</span></div>'
+        '<div class="slider" role="img" aria-label="Truthfulness score %d out of 100: %s">'
+        '<div class="s-track"><div class="s-marker" style="left:%d%%"></div></div>'
+        '<div class="s-ends"><span>Deceptive</span><span>Honest</span></div>'
+        "</div></div>"
+        % (score, cls, esc(label), score, esc(label), score)
+    )
 
 
-def claim_html(claim):
+def segment_html(seg):
     sources = "".join(
         '<a class="src" href="%s" target="_blank" rel="noopener">%s</a>'
         % (esc(s.get("url", "#")), esc(s.get("name", "source")))
-        for s in claim.get("sources", [])
+        for s in seg.get("sources", [])
     )
     src_block = ('<div class="sources">Sources: %s</div>' % sources) if sources else ""
+    sev = seg.get("severity", "Moderate")
+    sev_cls = SEV_CLASS.get(sev, "s-moderate")
     return (
-        '<div class="claim">'
-        '<div class="claim-head">%s<span class="claim-text">%s</span></div>'
-        '<p class="claim-why">%s</p>%s</div>'
-        % (verdict_badge(claim.get("verdict", "Unverifiable")),
-           esc(claim.get("claim", "")),
-           esc(claim.get("explanation", "")), src_block)
+        '<div class="segment">'
+        '<div class="seg-head"><span class="sev %s">%s</span>'
+        '<span class="seg-issue">%s</span></div>'
+        '<blockquote class="seg-quote">%s</blockquote>'
+        '<p class="seg-why">%s</p>%s</div>'
+        % (sev_cls, esc(sev), esc(seg.get("issue", "Misleading segment")),
+           esc(seg.get("segment", "")), esc(seg.get("explanation", "")), src_block)
     )
 
 
 def video_card(v):
-    claims = "".join(claim_html(c) for c in v.get("claims", []))
+    segs = "".join(segment_html(s) for s in v.get("segments", []))
+    if not segs:
+        segs = '<p class="empty">No misleading segments found in this video.</p>'
+    n = len(v.get("segments", []))
+    seg_title = "Key non-truthful segment%s" % ("s" if n != 1 else "")
     pub = esc(v.get("published", ""))
     return (
         '<article class="card">'
-        '<div class="card-top">%s'
-        '<a class="card-title" href="%s" target="_blank" rel="noopener">%s</a></div>'
+        '<a class="card-title" href="%s" target="_blank" rel="noopener">%s</a>'
         '<div class="card-meta">Published %s &middot; <a class="yt" href="%s" target="_blank" rel="noopener">Watch on YouTube</a></div>'
+        "%s"
         '<p class="card-summary">%s</p>'
-        '<div class="claims">%s</div>'
-        '</article>'
-        % (verdict_badge(v.get("verdict", "Unverifiable")),
-           esc(v.get("url", "#")), esc(v.get("title", "Untitled")),
-           pub, esc(v.get("url", "#")), esc(v.get("summary", "")), claims)
+        '<h3 class="seg-h">%s (%d)</h3>'
+        '<div class="segments">%s</div>'
+        "</article>"
+        % (esc(v.get("url", "#")), esc(v.get("title", "Untitled")),
+           pub, esc(v.get("url", "#")),
+           slider_html(v.get("truth_score", 0), v.get("truth_label", "Mixed")),
+           esc(v.get("summary", "")), seg_title, n, segs)
     )
 
 
 def tally(ed):
-    counts = {}
-    for v in ed.get("videos", []):
-        counts[v.get("verdict", "Unverifiable")] = counts.get(v.get("verdict", "Unverifiable"), 0) + 1
-    order = ["False", "Misleading", "Mixed", "Mostly accurate", "Accurate",
-             "Unverifiable", "No checkable claims"]
-    bits = []
-    for k in order:
-        if counts.get(k):
-            bits.append('%s: %d' % (k, counts[k]))
-    return " &middot; ".join(bits) if bits else "No videos checked"
+    vids = ed.get("videos", [])
+    if not vids:
+        return "No videos checked"
+    avg = sum(int(v.get("truth_score", 0)) for v in vids) / len(vids)
+    worst = min(vids, key=lambda v: int(v.get("truth_score", 0)))
+    return (
+        "%d videos checked &middot; average truthfulness <strong>%d/100</strong> "
+        "&middot; lowest: %s (%d)"
+        % (len(vids), round(avg), esc(worst.get("title", "")[:60]),
+           int(worst.get("truth_score", 0)))
+    )
 
 
 def edition_body(ed, standalone):
@@ -138,19 +167,17 @@ def edition_body(ed, standalone):
         audio = (
             '<div class="podcast"><div class="pod-h">Daily podcast</div>'
             '<audio controls preload="none" src="audio/%s.mp3"></audio>'
-            '<p class="pod-note">Alex and Jordan walk through every video and verdict.</p></div>'
-            % esc(date)
+            '<p class="pod-note">Alex and Jordan walk through every video&#x2019;s '
+            "score and its key misleading segments.</p></div>" % esc(date)
         )
     cards = "".join(video_card(v) for v in ed.get("videos", []))
     if not cards:
         cards = '<p class="empty">No videos were checked for this edition.</p>'
     head_link = "" if standalone else '<p class="back"><a href="index.html">&larr; All editions</a></p>'
     return (
-        '%s<h1>Fact-check: TYT videos from %s</h1>'
-        '<p class="tally">%d videos checked &middot; %s</p>%s'
-        '<div class="cards">%s</div>'
-        % (head_link, esc(fmt_date(date)), len(ed.get("videos", [])),
-           tally(ed), audio, cards)
+        '%s<h1>Truth-check: TYT videos from %s</h1>'
+        '<p class="tally">%s</p>%s<div class="cards">%s</div>'
+        % (head_link, esc(fmt_date(date)), tally(ed), audio, cards)
     )
 
 
@@ -165,7 +192,7 @@ BASE = """<!DOCTYPE html>
 <body>
 <header class="site">
   <a class="brand" href="index.html"><span class="brand-mark">&#x1F50D;</span> TYT Fact Check</a>
-  <span class="tagline">Every TYT video, fact-checked daily</span>
+  <span class="tagline">How honest was today's TYT?</span>
 </header>
 <button id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
 <div id="scrim"></div>
@@ -184,7 +211,7 @@ BASE = """<!DOCTYPE html>
 {body}
 </main>
 <footer class="foot">
-  <p>Not affiliated with The Young Turks or TYT Network. Verdicts reflect the evidence available at publication time; <a href="index.html#about">corrections policy</a> in About.</p>
+  <p>Not affiliated with The Young Turks or TYT Network. Scores reflect the evidence available at publication time; <a href="index.html#about">corrections policy</a> in About.</p>
 </footer>
 <script src="site.js?v={js_v}"></script>
 </body>
@@ -196,8 +223,10 @@ def archive_html(editions):
     if not editions:
         return '<p class="empty">Past editions will appear here.</p>'
     items = "".join(
-        '<a class="arch-item" href="%s.html"><span>%s</span><span class="arch-n">%d videos</span></a>'
-        % (esc(ed["_date"]), esc(fmt_date(ed["_date"])), len(ed.get("videos", [])))
+        '<a class="arch-item" href="%s.html"><span>%s</span><span class="arch-n">avg %d/100 &middot; %d videos</span></a>'
+        % (esc(ed["_date"]), esc(fmt_date(ed["_date"])),
+           round(sum(int(v.get("truth_score", 0)) for v in ed.get("videos", [])) / max(1, len(ed.get("videos", [])))),
+           len(ed.get("videos", [])))
         for ed in editions
     )
     return '<div class="archive">%s</div>' % items
@@ -207,21 +236,24 @@ ABOUT_HTML = """
 <section id="about" class="about">
 <h2>About &amp; methodology</h2>
 <p><strong>TYT Fact Check</strong> watches every full-length video The Young Turks
-post to YouTube each day and checks the factual claims in it — for accuracy and
-honesty, no matter which direction the verdict lands.</p>
+post to YouTube each day and rates its <em>honesty</em> — not with a checklist of
+trivia, but by pulling out the key non-truthful segments and explaining what makes
+each one misleading.</p>
 <ul>
-<li><strong>Claims, not opinions.</strong> Only checkable factual claims are rated.
-Opinion, predictions, and rhetoric are left alone.</li>
-<li><strong>Evidence first.</strong> Every claim gets a short evidence walkthrough
-with named sources (primary documents, official data, wire reporting). Nothing is
-asserted without a source you can open.</li>
-<li><strong>Verdicts:</strong> Accurate, Mostly accurate, Mixed, Misleading, False,
-Unverifiable. A video's overall verdict follows its most severe claim.</li>
-<li><strong>Corrections:</strong> if new evidence changes a verdict, the edition is
+<li><strong>The unit is the misleading segment.</strong> Selective omission, false
+implication, cherry-picked data, strawmen, deceptive framing, loaded language that
+implies something false, or an outright false claim — each gets called out with the
+fuller, accurate picture.</li>
+<li><strong>Sliding truthfulness score.</strong> Every video scores 0&ndash;100.
+Each segment deducts by severity: Minor &minus;5, Moderate &minus;15, Severe
+&minus;30. Bands: 90&ndash;100 Honest, 70&ndash;89 Mostly honest, 50&ndash;69 Mixed,
+30&ndash;49 Misleading, 0&ndash;29 Deceptive.</li>
+<li><strong>Evidence first.</strong> Every segment explanation cites named sources
+(primary documents, official data, wire reporting) you can open yourself.</li>
+<li><strong>Corrections:</strong> if new evidence changes a score, the edition is
 updated and the change is noted. No stealth edits.</li>
-<li><strong>No feed, no spin.</strong> One edition per day, plus a daily podcast
-episode at the top of each edition page. This project is not affiliated with
-The Young Turks.</li>
+<li><strong>One edition per day,</strong> plus a daily podcast episode walking through
+each video&#x2019;s score and misleading segments. Not affiliated with The Young Turks.</li>
 </ul>
 </section>
 """
@@ -231,13 +263,11 @@ def build():
     os.makedirs(DOCS, exist_ok=True)
     editions = load_editions()
 
-    # static assets
     for name in ("style.css", "site.js"):
         src = os.path.join(STATIC, name)
         if os.path.isfile(src):
             shutil.copy(src, os.path.join(DOCS, name))
 
-    # podcast audio
     audio_dir = os.path.join(DOCS, "audio")
     os.makedirs(audio_dir, exist_ok=True)
     for ed in editions:
@@ -259,13 +289,11 @@ def build():
                            body=body, edition_links=edition_links,
                            latest_link=latest_link)
 
-    # per-edition pages
     for ed in editions:
         with open(os.path.join(DOCS, ed["_date"] + ".html"), "w") as f:
             f.write(page("TYT Fact Check — " + fmt_date(ed["_date"]),
                          edition_body(ed, standalone=True)))
 
-    # index: latest edition + archive + about
     if editions:
         index_body = (
             edition_body(editions[0], standalone=False)
@@ -277,15 +305,16 @@ def build():
         index_body = (
             "<h1>TYT Fact Check</h1>"
             '<p class="lede">Every full-length video The Young Turks post to '
-            "YouTube, fact-checked daily for honesty and accuracy — with a daily "
-            "podcast walking through every verdict.</p>"
+            "YouTube, rated daily for honesty — the key non-truthful segments pulled "
+            "out and explained, with a sliding 0&ndash;100 truthfulness score per video, "
+            "plus a daily podcast walking through it all.</p>"
             '<p class="empty">The first edition publishes tomorrow morning. Check back then.</p>'
             + '<h2 id="archive">Past editions</h2>'
             + archive_html([])
             + ABOUT_HTML
         )
     with open(os.path.join(DOCS, "index.html"), "w") as f:
-        f.write(page("TYT Fact Check — daily fact-check of The Young Turks", index_body))
+        f.write(page("TYT Fact Check — daily honesty rating of The Young Turks", index_body))
 
     print("Built %d editions -> %s" % (len(editions), DOCS))
 
