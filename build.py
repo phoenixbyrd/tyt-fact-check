@@ -269,6 +269,9 @@ Each segment deducts by severity: Minor &minus;5, Moderate &minus;15, Severe
 30&ndash;49 Misleading, 0&ndash;29 Deceptive.</li>
 <li><strong>Evidence first.</strong> Every segment explanation cites named sources
 (primary documents, official data, wire reporting) you can open yourself.</li>
+<li><strong>Verify the event, not the echo.</strong> A claim is treated as true only
+when the underlying event is confirmed by direct evidence — not merely because
+someone said it happened. If the event can't be verified, we say so.</li>
 <li><strong>Corrections:</strong> if new evidence changes a score, the edition is
 updated and the change is noted. No stealth edits.</li>
 <li><strong>One edition per day,</strong> plus a daily podcast episode walking through
