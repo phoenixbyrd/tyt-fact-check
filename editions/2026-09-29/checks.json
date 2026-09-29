@@ -1,0 +1,456 @@
+{
+ "date": "2026-09-29",
+ "videos": [
+  {
+   "published": "2026-09-28T23:30:00-04:00",
+   "segments": [
+    {
+     "explanation": "The underlying event is verified: Haaretz, citing an Israeli and a regional official, reported that Netanyahu's secret UAE trip was to ask President bin Zayed to publicly deny reports of a pre-October 7 warning, and AP confirmed the visit's purpose. But no reporting describes Netanyahu 'begging'; he 'asked.' The title's 'begging' frames a diplomatic request as panicked pleading, which the sources do not support.",
+     "issue": "Deceptive framing / loaded language",
+     "segment": "Video title: \"Benjamin Netanyahu Caught BEGGING For Help\" (~0:00)",
+     "severity": "Minor",
+     "sources": [
+      {
+       "name": "Times of Israel",
+       "url": "https://www.timesofisrael.com/netanyahu-asked-uae-leader-to-deny-reports-he-warned-of-looming-hamas-attack-sources/"
+      }
+     ]
+    },
+    {
+     "explanation": "The New York Times did independently report, citing anonymous sources, that UAE President bin Zayed warned Netanyahu before October 7. But the allegation originates from a book's claim and is officially denied: the UAE Foreign Ministry maintained that no such warning was issued, and Netanyahu's office denied the reports. The video presents the warning as settled fact ('that's absolutely right') without mentioning any denial, omitting material context a viewer needs to judge the claim.",
+     "issue": "Omission",
+     "segment": "\"And it turns out that The New York Times has now confirmed Haaretz reporting. Yes, that's absolutely right.\" (~0:40)",
+     "severity": "Moderate",
+     "sources": [
+      {
+       "name": "Times of Israel",
+       "url": "https://www.timesofisrael.com/netanyahu-asked-uae-leader-to-deny-reports-he-warned-of-looming-hamas-attack-sources/"
+      }
+     ]
+    },
+    {
+     "explanation": "In the September 12, 2001 New York Times interview, Netanyahu was asked about the effect of 9/11 on U.S.-Israel relations and replied 'It's very good' - but immediately corrected himself: 'Well, not very good, but it will generate immediate sympathy.' The video quotes only the first phrase and asserts the attacks 'didn't bother him at all,' omitting the on-the-record self-correction that changes the meaning of the exchange.",
+     "issue": "Omission (selective quotation)",
+     "segment": "\"And Netanyahu, he said this is very good for the Israelis. It didn't bother him at all. Didn't bother him a bit.\" (~15:07)",
+     "severity": "Moderate",
+     "sources": [
+      {
+       "name": "Wikiquote (citing The New York Times, Sept 12, 2001)",
+       "url": "https://en.wikiquote.org/wiki/Benjamin_Netanyahu"
+      }
+     ]
+    },
+    {
+     "explanation": "No public evidence or official investigation has shown that Netanyahu deliberately allowed the October 7 attack to happen; the IDF's internal probes, reported by AP, found massive intelligence failures and misconceptions about Hamas, not intent, and Netanyahu denies ignoring warnings. Asserting as a conclusion that he 'planned' it and stating his motive as fact is speculative and goes beyond the evidence.",
+     "issue": "Opinion presented as fact / motive inference",
+     "segment": "\"It looks like exactly what he planned... he would let the attack happen for his own political purposes... he would do it to anyone to gain political advantage which he thinks is good for Zionism and the Israeli project.\" (~14:50)",
+     "severity": "Moderate",
+     "sources": [
+      {
+       "name": "Associated Press",
+       "url": "https://apnews.com/article/israel-hamas-military-inquiry-gaza-34988076bd5283686cb80678aff799ad"
+      }
+     ]
+    }
+   ],
+   "summary": "The video reports on Haaretz's claim that Netanyahu secretly flew to the UAE to ask President bin Zayed to publicly deny reports that he was warned before the October 7 attack, and reviews other pre-October 7 warnings from Egypt and the 'Jericho Wall' blueprint. The underlying event is real and corroborated by AP and the Times of Israel, but the video presents the disputed UAE warning as settled fact while omitting official denials, selectively quotes Netanyahu's 2001 remarks on 9/11, and asserts without evidence that he deliberately let the attack happen. Overall verdict: Mixed.",
+   "title": "Benjamin Netanyahu Caught BEGGING For Help",
+   "truth_label": "Mixed",
+   "truth_score": 50,
+   "url": "https://www.youtube.com/watch?v=QwAxDTHIZwo",
+   "video_id": "QwAxDTHIZwo"
+  },
+  {
+   "published": "2026-09-28T22:45:00-04:00",
+   "segments": [
+    {
+     "explanation": "Whether Israel's actions constitute genocide is legally disputed and unresolved: in South Africa v. Israel, the International Court of Justice has only issued provisional measures (January 2024), and the Court notes that at that stage it does not determine the merits of the case. The video repeatedly asserts genocide as an established fact rather than a contested characterization, which misleads viewers about the legal status of the claim.",
+     "issue": "Opinion presented as fact",
+     "segment": "\"The genocide continues in Gaza... they're carrying out a genocide in the West Bank.\" (~6:12, ~10:52)",
+     "severity": "Moderate",
+     "sources": [
+      {
+       "name": "International Commission of Jurists (on ICJ provisional measures)",
+       "url": "https://www.icj.org/gaza-israel-must-implement-provisional-measures-ordered-by-the-international-court-of-justice/"
+      }
+     ]
+    },
+    {
+     "explanation": "The Committee to Protect Journalists' September 2026 review attributes 191 Palestinian journalists' deaths to Israeli forces in Gaza and counts 247 war-related journalist and media worker deaths across Gaza, Yemen, Lebanon, Iran and Israel since October 7, 2023. Gaza is the deadliest conflict for journalists CPJ has documented, but CPJ's published data does not support the unqualified claim that Gaza's toll exceeds 'all the other conflicts in the world combined' - CPJ's all-time global total is far higher, and the video omits any time frame that would make the comparison meaningful.",
+     "issue": "False implication / exaggeration",
+     "segment": "\"They've murdered more journalists in Gaza than all the other conflicts in the world combined.\" (~5:04)",
+     "severity": "Moderate",
+     "sources": [
+      {
+       "name": "Committee to Protect Journalists",
+       "url": "https://cpj.org/issue/israel-gaza-war/"
+      }
+     ]
+    },
+    {
+     "explanation": "Destruction in Gaza is vast, but not literally total: a UNOSAT satellite assessment found around 201,290 buildings affected - roughly 78% of structures per UN-Habitat - with about 134,422 destroyed. Stating that 'every single building' was destroyed is demonstrably false as a factual claim, even as hyperbole, and overstates the documented damage.",
+     "issue": "False claim (hyperbole presented as fact)",
+     "segment": "\"They've destroyed every single building.\" (~4:47)",
+     "severity": "Moderate",
+     "sources": [
+      {
+       "name": "Middle East Monitor (citing UNOSAT)",
+       "url": "https://www.middleeastmonitor.com/20260928-satellite-images-reveal-vast-destruction-across-gaza-following-israels-genocide/"
+      }
+     ]
+    }
+   ],
+   "summary": "The video covers Finance Minister Bezalel Smotrich's podcast call for Israel to 'go to war' in the West Bank and dismantle the Palestinian Authority, quoting him accurately, and discusses West Bank casualties and destruction in Gaza. The Smotrich quotes and the UN casualty figures cited are broadly consistent with Times of Israel and OCHA reporting, but the video asserts genocide as an established legal fact, inflates the journalist-death toll into an unsupported 'all other conflicts combined' claim, and states that literally every building in Gaza was destroyed. Overall verdict: Mixed.",
+   "title": "What Is Israel Preparing In The West Bank?",
+   "truth_label": "Mixed",
+   "truth_score": 55,
+   "url": "https://www.youtube.com/watch?v=fD4jP4ZKWQE",
+   "video_id": "fD4jP4ZKWQE"
+  },
+  {
+   "published": "2026-09-28T22:00:00-04:00",
+   "segments": [
+    {
+     "explanation": "NBC News did break the story of the September 14 attack as 'previously unreported,' and the Pentagon had not publicly announced the eight Marines' injuries. However, the Pentagon confirmed the attack when asked and had recorded the injuries in the official Defense Casualty Analysis System. 'Tried to hide' ascribes a deliberate cover-up motive that goes beyond what the reporting establishes.",
+     "issue": "Deceptive framing / loaded language",
+     "segment": "Video title: \"The Secret Iranian Attack They Tried To Hide\" (~0:00)",
+     "severity": "Minor",
+     "sources": [
+      {
+       "name": "Military.com",
+       "url": "https://www.military.com/eight-marines-injured-with-smoke-inhalation-and-possible-tbi-in-previously-unreported-iranian-attack"
+      }
+     ]
+    },
+    {
+     "explanation": "The video insinuates CENTCOM is lying when it says the Marines were not on a warship. But independent reporting corroborates CENTCOM: NBC reported the Marines 'were not on a Navy ship,' and Military.com confirmed the missile struck a 'non-commissioned commercial vessel' in the Strait of Hormuz. The suspicion is unsupported by the available evidence, which agrees with CENTCOM's account on this point.",
+     "issue": "False implication / unsubstantiated claim",
+     "segment": "\"CENTCOM has been caught in a lot of lies... So now when they tell us it wasn't a warship, oh, I wonder if they're lying again?\" (~1:06, ~6:51)",
+     "severity": "Moderate",
+     "sources": [
+      {
+       "name": "Military.com",
+       "url": "https://www.military.com/eight-marines-injured-with-smoke-inhalation-and-possible-tbi-in-previously-unreported-iranian-attack"
+      }
+     ]
+    },
+    {
+     "explanation": "No pre-war estimate was $1.7 billion: Vice President Cheney said on Meet the Press on March 16, 2003 that 'every analysis said this war itself would cost about $80 billion,' and administration estimates ran $50-80 billion. The $1.7 trillion figure is Brown University's Costs of War Project estimate of the war's actual long-term cost - the video conflates the actual-cost estimate with the pre-war estimate and misstates it by a factor of a thousand. The broader point that costs were underestimated is true, but the specific number presented as fact is wrong.",
+     "issue": "False claim",
+     "segment": "\"When asked in [2003] how much the Iraq war would cost... 'Maybe it'll cost $1.7 billion.' In reality, it cost several trillion dollars.\" (~7:00)",
+     "severity": "Severe",
+     "sources": [
+      {
+       "name": "Wikipedia (Financial cost of the Iraq War)",
+       "url": "https://en.wikipedia.org/wiki/Financial_cost_of_the_Iraq_War"
+      }
+     ]
+    }
+   ],
+   "summary": "The video reports NBC News' scoop that eight U.S. Marines were injured in a previously unreported Iranian cruise-missile strike on September 14, and discusses Pentagon casualty disclosure and the risk of escalation after the U.S. midterms. The core event is verified by NBC, Military.com and other outlets, and the cited Wall Street Journal reporting on post-midterm bombing plans checks out, but the video frames the Pentagon's non-announcement as a deliberate cover-up, insinuates CENTCOM is lying about the vessel type despite corroborating reporting, and falsely states the pre-Iraq-war cost estimate was $1.7 billion. Overall verdict: Mixed.",
+   "title": "The Secret Iranian Attack They Tried To Hide",
+   "truth_label": "Mixed",
+   "truth_score": 50,
+   "url": "https://www.youtube.com/watch?v=k1mA0SP3tR4",
+   "video_id": "k1mA0SP3tR4"
+  },
+  {
+   "published": "2026-09-28T21:15:00-04:00",
+   "segments": [
+    {
+     "explanation": "No $3 trillion package exists. The Associated Press reported on September 15, 2026, that the Trump administration planned a $2.8 billion weapons sale to Israel including 40,000 bombs \u2014 one-thousandth of the claimed figure. The video inflated the real sale by a factor of 1,000, and a later segment of the same program correctly cited '$2.8 billion... 40,000 bombs,' contradicting this claim.",
+     "issue": "False claim",
+     "segment": "\"Donald Trump announces that he's going to provide Israel with nearly $3 trillion of additional bombs that you're paying for.\" (~6:20)",
+     "severity": "Severe",
+     "sources": [
+      {
+       "name": "Associated Press",
+       "url": "https://apnews.com/article/trump-israel-weapons-sales-gaza-eb48cb7ecf773ffc472fbafc995aef2a"
+      }
+     ]
+    },
+    {
+     "explanation": "Statista, citing official data for February 28 to April 13, 2026, records 11 Israeli military fatalities and 78 military injuries in the war with Iran \u2014 not zero. The same program later contradicts itself, acknowledging 'dozens of IDF soldiers have been killed since the start of the Iran war.' The zero-casualty claim is demonstrably false.",
+     "issue": "False claim",
+     "segment": "\"Number of Israeli soldiers who have died in the Iran war, zero. Number who have been injured during the Iran war? Zero.\" (~5:35)",
+     "severity": "Severe",
+     "sources": [
+      {
+       "name": "Statista",
+       "url": "https://www.statista.com/statistics/1660068/israeli-fatalities-and-injuries-in-us-israel-iran-war/"
+      }
+     ]
+    },
+    {
+     "explanation": "The underlying warnings are real: the AP confirmed the UAE president warned Netanyahu days before October 7, and the IDF's 2022 'Jericho Wall' attack blueprint was reported by the New York Times. But no evidence establishes that Netanyahu deliberately allowed the attack; outlets describe an intelligence failure, and his office called the claims 'an absolute lie.' Stating unproven intent ('he wanted it to happen') as the factual explanation is opinion presented as fact.",
+     "issue": "Opinion presented as fact",
+     "segment": "\"Why do you think he ignored it? Because he wanted it to happen so he could use it as the excuse\" \u2014 on Netanyahu and the October 7 warnings (~8:00)",
+     "severity": "Moderate",
+     "sources": [
+      {
+       "name": "Associated Press",
+       "url": "https://apnews.com/article/israel-netanyahu-hamas-war-gaza-warning-935c2cd82d3204d6dc859d296fc866e3"
+      }
+     ]
+    }
+   ],
+   "summary": "The video covers Mark Levin and Ben Shapiro urging strikes on Iran's Kharg Island, Iran's 'doomsday war' threats, disputed Strait of Hormuz oil-flow figures, Fox commentators on the war's unpopularity, and Netanyahu's ignored October 7 warnings. Verdict: Deceptive. It contains two demonstrably false numerical claims \u2014 a '$3 trillion' weapons package that was actually $2.8 billion, and 'zero' Israeli casualties versus 11 military dead and 78 wounded \u2014 plus unproven motive attributed to Netanyahu as fact.",
+   "title": "Israel-First BEGS For More War",
+   "truth_label": "Deceptive",
+   "truth_score": 25,
+   "url": "https://www.youtube.com/watch?v=konwN7S_nVc",
+   "video_id": "konwN7S_nVc"
+  },
+  {
+   "published": "2026-09-28T20:47:00-04:00",
+   "segments": [
+    {
+     "explanation": "No $3 trillion package exists. The Associated Press reported on September 15, 2026, that the Trump administration planned a $2.8 billion weapons sale to Israel including 40,000 bombs \u2014 one-thousandth of the claimed figure. The video inflated the real sale by a factor of 1,000, and a later segment of the same program correctly cited '$2.8 billion... 40,000 bombs,' contradicting this claim.",
+     "issue": "False claim",
+     "segment": "\"Donald Trump announces that he's going to provide Israel with nearly $3 trillion of additional bombs that you're paying for.\" (~00:34:03)",
+     "severity": "Severe",
+     "sources": [
+      {
+       "name": "Associated Press",
+       "url": "https://apnews.com/article/trump-israel-weapons-sales-gaza-eb48cb7ecf773ffc472fbafc995aef2a"
+      }
+     ]
+    },
+    {
+     "explanation": "Statista, citing official data for February 28 to April 13, 2026, records 11 Israeli military fatalities and 78 military injuries in the war with Iran \u2014 not zero. The same program later contradicts itself, acknowledging 'dozens of IDF soldiers have been killed since the start of the Iran war.' The zero-casualty claim is demonstrably false.",
+     "issue": "False claim",
+     "segment": "\"Number of Israeli soldiers who have died in the Iran war, zero. Number who have been injured during the Iran war? Zero.\" (~00:33:05)",
+     "severity": "Severe",
+     "sources": [
+      {
+       "name": "Associated Press",
+       "url": "https://www.statista.com/statistics/1660068/israeli-fatalities-and-injuries-in-us-israel-iran-war/"
+      }
+     ]
+    },
+    {
+     "explanation": "The underlying event is verified: Ambassador David Perdue told Fox News that Trump asked Xi Jinping about buying U.S. arms. But Trump did not admit it when asked; the AP reported he said, 'I never heard of that one. I'm going to have to ask him.' The video recasts his denial as a casual admission, reversing what he actually said on the record.",
+     "issue": "False implication",
+     "segment": "\"Trump got asked about this and he goes, 'Oh yeah, I might've mentioned it in passing.'\" (~01:43:52)",
+     "severity": "Moderate",
+     "sources": [
+      {
+       "name": "Associated Press",
+       "url": "https://apnews.com/article/trump-xi-china-arms-sales-weapons-b5df7c498d2165c646a559799116786b"
+      }
+     ]
+    },
+    {
+     "explanation": "The 83% figure does not come from doctors. It comes from a Guardian/+972 Magazine investigation (August 2025) finding the IDF's own database indicated an 83% civilian death rate in Gaza. U.S. doctors did describe treating children with sniper-like gunshot wounds in a New York Times account, but no '83% of doctors' statistic exists. The video fused two separate findings into one false statistic.",
+     "issue": "False claim",
+     "segment": "\"American doctors, 83% of them reported sniper shots to children every single day they were in Gaza.\" (~01:06:41)",
+     "severity": "Moderate",
+     "sources": [
+      {
+       "name": "The Guardian",
+       "url": "https://www.theguardian.com/world/ng-interactive/2025/aug/21/revealed-israeli-militarys-own-data-indicates-civilian-death-rate-of-83-in-gaza-war"
+      }
+     ]
+    },
+    {
+     "explanation": "The video implies the administration is actively considering tactical nuclear weapons against Iran. But on August 31, 2026, Trump publicly ruled out using nuclear weapons against Iran, calling the idea a 'stupid question.' Mid-August speculation about nuclear options preceded that explicit denial. Omitting the on-record rule-out while asserting current consideration materially misleads about the administration's stated position.",
+     "issue": "Omission",
+     "segment": "\"That's why they're considering using tactical nukes cuz there's no way out of this.\" (~00:18:30)",
+     "severity": "Moderate",
+     "sources": [
+      {
+       "name": "USA Today",
+       "url": "https://www.usatoday.com/story/news/politics/2026/08/31/trump-rules-out-nuclear-weapons-iran-war/91553065007/"
+      }
+     ]
+    }
+   ],
+   "summary": "This 2-hour-44-minute program covers the Kharg Island debate, injured U.S. Marines, Smotrich's West Bank war call, Netanyahu's October 7 warnings, the 1933 Haavara Agreement, Trump's alleged arms offer to Xi Jinping, Taiwan arms sales, and a repurposed campaign ad. Verdict: Deceptive. It repeats the $3 trillion and zero-casualty falsehoods, misquotes Trump's response on the Xi arms story, fuses two separate findings into a false '83% of doctors' statistic, and implies active tactical-nuke consideration while omitting Trump's on-record August 31 ruling-out of nuclear weapons.",
+   "title": "Israel First BEGS Donald Trump To ESCALATE The Iran War",
+   "truth_label": "Deceptive",
+   "truth_score": 0,
+   "url": "https://www.youtube.com/watch?v=VTXbe8bNfA4",
+   "video_id": "VTXbe8bNfA4"
+  },
+  {
+   "published": "2026-09-28T20:30:00-04:00",
+   "segments": [
+    {
+     "explanation": "Statista, citing official data for February 28 to April 13, 2026, records 11 Israeli military fatalities and 78 military injuries in the war with Iran \u2014 not zero. Presenting a zero-casualty figure as fact when documented military deaths and injuries exist is a demonstrably false statement.",
+     "issue": "False claim",
+     "segment": "\"Israel has had zero casualties.\" (~00:05:50)",
+     "severity": "Severe",
+     "sources": [
+      {
+       "name": "Statista",
+       "url": "https://www.statista.com/statistics/1660068/israeli-fatalities-and-injuries-in-us-israel-iran-war/"
+      }
+     ]
+    },
+    {
+     "explanation": "The video implies the administration is actively considering tactical nuclear weapons against Iran. But on August 31, 2026, Trump publicly ruled out using nuclear weapons against Iran, calling the idea a 'stupid question.' Omitting that on-record denial while asserting current consideration materially misleads about the administration's stated position.",
+     "issue": "Omission",
+     "segment": "\"That's why they're considering using tactical nukes cuz there's no way out of this.\" (~00:12:20)",
+     "severity": "Moderate",
+     "sources": [
+      {
+       "name": "USA Today",
+       "url": "https://www.usatoday.com/story/news/politics/2026/08/31/trump-rules-out-nuclear-weapons-iran-war/91553065007/"
+      }
+     ]
+    },
+    {
+     "explanation": "Cook's September 2026 Battleground District Project found Democrats with a two-point advantage, 49% to 47%, in competitive districts \u2014 not nine points. National generic-ballot aggregators showed roughly a 7-to-8-point Democratic edge, but attributing a '9-point lead' specifically to Cook misstates its published finding.",
+     "issue": "False claim",
+     "segment": "\"Cook Political Report came out recently saying... the Democrats have a 9-point lead in the generic poll.\" (~00:07:30)",
+     "severity": "Moderate",
+     "sources": [
+      {
+       "name": "Cook Political Report",
+       "url": "https://www.cookpolitical.com/survey-research/2026-battleground-district-project"
+      }
+     ]
+    }
+   ],
+   "summary": "This segment covers Trump's press conference (where he appeared to doze), his $5,000-checks promise, Nvidia's stock buybacks, U.S. casualty figures, polling, and the Wall Street Journal's Iran reporting. Verdict: Misleading. The 'zero Israeli casualties' falsehood recurs, the tactical-nukes claim omits Trump's explicit rule-out, and Cook's 2-point poll is inflated to 9 points \u2014 though the dozing episode, the $5,000 promise, Nvidia's $150 billion buyback, and the WSJ ceasefire-offer reporting all check out.",
+   "title": "Ana & Cenk STUNNED By Trump's NIGHTMARE Press Conference",
+   "truth_label": "Misleading",
+   "truth_score": 40,
+   "url": "https://www.youtube.com/watch?v=N16CMhdALME",
+   "video_id": "N16CMhdALME"
+  },
+  {
+   "published": "2026-09-28T12:00:00-04:00",
+   "segments": [
+    {
+     "explanation": "The hosts assert with absolute certainty that Saudi Arabia's claim is fabricated propaganda, based on the analogy that Muslims would never strike Mecca. In fact, Saudi coalition spokesman Turki al-Maliki publicly announced the interception with specifics, the Houthis denied targeting Mecca (consistent with either side), and the 57-member Organisation of Islamic Cooperation and Pakistan's prime minister condemned the incident. Whether the drone was Houthi-operated is disputed and unverified; presenting the Saudi claim as certainly false substitutes the hosts' certainty for an unresolved factual dispute.",
+     "issue": "Opinion presented as fact",
+     "segment": "\"I don't believe this at all... There's no chance that that's like a Catholic group hitting the Vatican. It's not gonna happen... that's just obvious propaganda\" (~3:29-4:00), dismissing Saudi Arabia's claim that the Houthis fired a drone near Mecca",
+     "severity": "Moderate",
+     "sources": [
+      {
+       "name": "CNN",
+       "url": "https://www.cnn.com/2026/09/16/middleeast/saudi-arabia-houthis-mecca-attack-intl-hnk"
+      },
+      {
+       "name": "Wikipedia \u2014 2026 Yemen offensives",
+       "url": "https://en.wikipedia.org/wiki/2026_Yemen_offensives"
+      }
+     ]
+    },
+    {
+     "explanation": "Reuters reported industry sources estimating five to six weeks for repairs, with one source saying it could be fixed sooner. Characterizing this as 'months' of damage with high consumer prices 'well beyond the midterms' (Nov 3, 2026) overstates the documented repair timeline, even though the underlying claim that pumping stations (not the pipeline itself) were hit and are hard to repair is accurate.",
+     "issue": "Exaggeration",
+     "segment": "\"The damage caused by the strikes could last months to repair... [we could] see high prices for consumers well beyond the midterms\" (~1:03-1:10), on the East-West pipeline pumping-station damage",
+     "severity": "Minor",
+     "sources": [
+      {
+       "name": "Reuters",
+       "url": "https://www.reuters.com/business/energy/three-pumping-stations-along-saudi-east-west-pipeline-were-hit-recent-attack-2026-09-17/"
+      }
+     ]
+    }
+   ],
+   "summary": "Covers how the US-Iran war is driving US fuel costs and why damage to Saudi Arabia's East-West pipeline could keep prices high even if fighting stopped. Its core claims \u2014 the $107B added fuel-cost estimate, the strikes on pipeline pumping stations, and the gap between US claims and tracker data on Hormuz shipments \u2014 check out against Reuters, CNN, and Al Jazeera. It loses points for dismissing the disputed Mecca drone incident as certain propaganda and for exaggerating the pipeline repair timeline.",
+   "title": "Gas Prices Could Get WORSE Even If the Iran War Ends",
+   "truth_label": "Mostly honest",
+   "truth_score": 80,
+   "url": "https://www.youtube.com/watch?v=3McOJ2mm6oE",
+   "video_id": "3McOJ2mm6oE"
+  },
+  {
+   "published": "2026-09-28T11:00:00-04:00",
+   "segments": [
+    {
+     "explanation": "Netanyahu's pre-UN video was harsh public criticism ('Shame on you, Mr. Mamdani... I'm going to tell the truth about you'), which outlets described as lambasting or ripping Mamdani \u2014 not a threat. Calling verbal criticism a 'threat' is loaded framing that implies a menace toward an elected official that was not documented. The underlying event (the video statement) is real and was accurately quoted.",
+     "issue": "Loaded language",
+     "segment": "\"Before Netanyahu even landed in the United States, he did issue a threat to the mayor of New York City, Zohran Mamdani\" (~1:23)",
+     "severity": "Minor",
+     "sources": [
+      {
+       "name": "Politico",
+       "url": "https://www.politico.com/news/2026/09/22/netanyahu-mamdani-unga-visit-video-01087578"
+      }
+     ]
+    }
+   ],
+   "summary": "Covers the mass delegate walkout during Netanyahu's UN General Assembly address plus related events (protester arrests, Abbas's visa denial, the Mamdani spat, the Soleimani photo). The walkout, the Einbinder arrest, the visa denial, the 'shame on you' video, and the Soleimani photo are all confirmed by Reuters, AP, and Politico \u2014 AP reported a majority of seats sat empty. The only deduction is for characterizing Netanyahu's criticism of Mamdani as a 'threat.'",
+   "title": "Netanyahu Gets a BRUTAL Reception at the UN",
+   "truth_label": "Honest",
+   "truth_score": 95,
+   "url": "https://www.youtube.com/watch?v=Gzsdw5ycmHU",
+   "video_id": "Gzsdw5ycmHU"
+  },
+  {
+   "published": "2026-09-28T10:00:00-04:00",
+   "segments": [
+    {
+     "explanation": "Saudi Arabia and Israel have never had formal diplomatic relations or a defense alliance; normalization has been discussed for years but never achieved, and Riyadh condemned Israeli strikes on Iran in 2025. Recent US-mediated intelligence-sharing talks amid the Houthi escalation show ad hoc security cooperation, not a long-standing alliance. Presenting 'allies' as an established hidden fact misleads viewers about the actual state of the relationship.",
+     "issue": "Opinion presented as fact",
+     "segment": "\"Saudis are allies with Israel... they've been allies for a long time\" (~2:22-2:39)",
+     "severity": "Moderate",
+     "sources": [
+      {
+       "name": "Wikipedia \u2014 Israel\u2013Saudi Arabia relations",
+       "url": "https://en.wikipedia.org/wiki/Israel%E2%80%93Saudi_Arabia_relations"
+      },
+      {
+       "name": "Wikipedia \u2014 2026 Yemen offensives",
+       "url": "https://en.wikipedia.org/wiki/2026_Yemen_offensives"
+      }
+     ]
+    },
+    {
+     "explanation": "This inverts the documented sequence of the September 2026 escalation the video covers: on September 3, 2026, the Houthis launched an offensive against the Saudi-backed Presidential Leadership Council, capturing Mokha, Perim Island, and Dhubab. While earlier in 2026 there were mutual truce violations, the September offensive itself was Houthi-initiated; omitting this falsely implies the Saudi-backed side restarted the fighting while the Houthis were negotiating.",
+     "issue": "Omission",
+     "segment": "\"The Houthis didn't do this out of nowhere. They had sent a delegation... [the Saudi-backed side] kind of restarted hostilities\" (~4:12-4:29)",
+     "severity": "Moderate",
+     "sources": [
+      {
+       "name": "Wikipedia \u2014 2026 Yemen offensives",
+       "url": "https://en.wikipedia.org/wiki/2026_Yemen_offensives"
+      }
+     ]
+    },
+    {
+     "explanation": "The US ended its 2025 bombing campaign through a negotiated ceasefire in which the Houthis pledged to stop attacking US vessels \u2014 Trump publicly claimed the Houthis capitulated. And in September 2026 Trump reportedly declined a Saudi request for US strikes on the Houthis, a deliberate policy choice rather than a battlefield surrender. Omitting the mutual deal and the Houthis' concession reduces a negotiated outcome to unilateral American defeat.",
+     "issue": "Omission",
+     "segment": "\"President Donald Trump pulled out of the war against the Houthis. He gave up. And the reason why he gave up is because we, the United States of America, with our fancy military [couldn't beat them]\" (~1:35-1:53)",
+     "severity": "Moderate",
+     "sources": [
+      {
+       "name": "Wikipedia \u2014 2026 Yemen offensives",
+       "url": "https://en.wikipedia.org/wiki/2026_Yemen_offensives"
+      }
+     ]
+    },
+    {
+     "explanation": "The Houthis made major verified gains (Mokha, Perim Island, Dhubab, and leverage over the Bab el-Mandeb strait), but they do not control all of Yemen \u2014 fighting continues and Saudi-backed forces still hold large areas, with Saudi Arabia's foreign minister saying the government remains 'very capable of defending the territory it controls.' The video's own narration ('major military leverage') is more measured than its title.",
+     "issue": "Misleading framing",
+     "segment": "Video title: \"Now They Control EVERYTHING\"",
+     "severity": "Minor",
+     "sources": [
+      {
+       "name": "Wikipedia \u2014 2026 Yemen offensives",
+       "url": "https://en.wikipedia.org/wiki/2026_Yemen_offensives"
+      },
+      {
+       "name": "AP",
+       "url": "https://apnews.com/article/iran-us-israel-yemen-houthis-hormuz-un-september-24-2026-8d8f9e371ad3772420f534ed86fc3eac"
+      }
+     ]
+    }
+   ],
+   "summary": "Covers the Houthis' September 2026 offensive in Yemen \u2014 the captures of Mokha, Perim Island, and Dhubab \u2014 and argues US and Saudi power failed to stop them. The territorial gains, the 10-12% Bab el-Mandeb shipping figure, and the captured US equipment are confirmed by the NYT, CNN, AP, and i24NEWS. But the video overstates a Saudi-Israeli 'alliance,' inverts who launched the September offensive, and reduces a negotiated US-Houthi ceasefire to a unilateral American surrender.",
+   "title": "Trump Couldn't Stop Them. Now They Control EVERYTHING",
+   "truth_label": "Mixed",
+   "truth_score": 50,
+   "url": "https://www.youtube.com/watch?v=mzw_DZNLUi0",
+   "video_id": "mzw_DZNLUi0"
+  }
+ ],
+ "podcast": {
+  "file": "episode.mp3",
+  "duration_sec": 1135
+ }
+}
